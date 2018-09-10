@@ -38,42 +38,25 @@
   * denotes on my to do for the project
   2.5 days = 20 hours
 
+  A music composition and production analyst app where you can set BPM, time signature, chord progressions, number of bars, structure and instruments and the app will display a visual representation of the song. Song data will be stored, and new songs can be added.
+
+
+
   ### difficulty scale 1-10. 1 meaning it's already finished 10 meaning what?!?!
 
   5 = 3 hours
   7 = 5 hours
   10 = full day + ??
 
-  *(5) add due date
-  *(7) time stamps (moment.js)
-  (5) format the display of the items in a list (need to add more detail)
-  (??) fix the layout
-  (7) color coded priority
-  highlight certain items
-  mouse over to see details
-  ability to select and delete multiple items (checkbox?)
-  add status/priorty and allow for sorting based on status/priority
-  Item categories
-  ability to add/leave comments on item
-  upload files/images
-  share item
-  drag and drop to arrange
-  search/filter on keyup/keydown
-  reminders? (push operation?)
-  secret corgi
-  delete item confirmation
-  fillet edges of boxes
-  font changes/choices? (google fonts)
-  Panic Button
-  Highlight based on status/priority/due date
-  options page (ability to set/toggle options)
-  show deleted items and allow for undelete
-  pagination (if more than 10 show a next button)
-  category pages (not really pages, just a show/hide trick)
-  strike-through completed/deleted items (styling)
-  add more items button, that shows another input section allowing for multiple items to be added at once
-  Fun stuff
-  auto-complete when searching/filtering
+  Add variables for each piece of the data that a song requires (BPM, time signature, chord progression, number of bars, instruments) so users can input (5)
+  Create a list of song structure parts(chorus, verse, bridge, ...) so users can divide bars with its corresponding structure part. (3)
+  Store information given by user (5)
+  Create a visual representation of the data (probably a table with columns and rows, where columns will be the bars of the song, and rows the instruments) (9)
+  Return and display basic info (Artist name, Album, song title, song duration) (1)
+  Style (7)
+
+  Extra:
+  Make the Table manipulable (??);
 
 
 
