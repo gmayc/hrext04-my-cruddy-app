@@ -1,37 +1,48 @@
 $(document).ready(function() {
 
 
-  $(".add-text-btn").on("click", function(){
+  $(".add-data-btn").on("click", function(){
 
     // store values
-    let inputKey = $(".user-input-title").val();
-    let inputValue = $(".user-input-body").val();
-
+    let artist = $(".artist").val();
+    let album = $(".album").val();
+    let songTitle = $(".song-title").val();
+    let BPM = $(".B-P-M").val();
+    let numOfBars = Number($(".number-of-bars").val());
+    let instruments = $(".instruments").val();
+    let instArray = instruments.split(' ');
+    console.log(instArray.length);
     // clear values
-    $(".user-input-title").val("");
-    $(".user-input-body").val("");
+    $(".artist").val("");
+    $(".album").val("");
 
-    console.log(inputKey, inputValue);
+    console.log(typeof numOfBars);
+    localStorage.setItem(songTitle,JSON.stringify({artist: artist, album: album, song: songTitle, BPM: BPM, Bars: numOfBars, instruments: instruments}));
+    // console.log(localStorage);
+    $(".stored-songs").append(`<option>${songTitle}</option>`);
+    
+    // let bar = `<td class="bar"> ${} </td>`;
+    for (let i = 0; i <= numOfBars; i++) {
+      // $(".t1").html(`<tr class="bar"> ${i} </tr>`);
+      $('#t1').append(`<th class="bar">`+ i +`</th>`)
+      
+    }
+    if (instArray[0] === "") {
+      alert('John Cage\'s 4:33 is not accepted. Please input an instrument...')
+    } else {
+      for (let i = 0; i < instArray.length; i++) {
+        var value1 = Math.floor(Math.random() * Math.floor(255))
+        var value2 = Math.floor(Math.random() * Math.floor(255))
+        var value3 = Math.floor(Math.random() * Math.floor(255))
+        $('#t1').append(`<tr><td class="${instArray[i]}">${instArray[i]}</td>`);
+        $(`.${instArray[i]}`).css('background-color', `rgb(${value1}, ${value2}, ${value3})`);
+      }
 
-    localStorage.setItem(inputKey, inputValue);
-    // data-
-    let itemHtml = '<div class="display-item" data-storage-key="'+inputKey+'"> ' + inputKey + ' ' +  localStorage.getItem(inputKey) + '</div>';
-    $(".display").html(itemHtml);
+    }
     //console.log(localStorage);
     // how can we delegate this event to the outer html node?
     // https://learn.jquery.com/events/event-delegation/
 
-    $(".display-item").on("click", function(e){
-      // plop the key:value back into the input boxes
-
-      // get the values from the the divs?
-      console.log("key=> ", e.target.dataset.storageKey); // user-input-title
-      localStorage.getItem(e.target.dataset.storageKey); // user-input-body
-
-      // set those values in the form fields
-      $(".user-input-title").val(e.target.dataset.storageKey);
-      $(".user-input-body").val(localStorage.getItem(e.target.dataset.storageKey));
-    });
 
   });
 
@@ -39,16 +50,17 @@ $(document).ready(function() {
 
    // TODO add back in later
    // $(".user-input").on("keyup", function(){
-   //   let inputValue = $(".user-input").val();
-   //   localStorage.setItem("testStorage", inputValue);
+   //   let album = $(".user-input").val();
+   //   localStorage.setItem("testStorage", album);
    //   $(".display").text(localStorage.getItem("testStorage"));
    // });
 
-   $(".del-text-btn").on("click", function() {
+   $(".del-data-btn").on("click", function() {
      alert('item deleted? check the console'); // maybe change to a window.confirm
-     localStorage.removeItem( $('.user-input-title').val() ); // grab the title and plop here
-     $(".user-input-title").val("");
-     $(".user-input-body").val("");
+     localStorage.removeItem( $('.song-title').val() ); // grab the title and plop here
+    //  ('.stored-songs').removeItem($('.song-title').val()); // grab the title and plop here
+     $(".artist").val("");
+     $(".album").val("");
      // clearing display? what if I have multiple items?
      // after item is removed from local storage, redisplay items from local storage
      // refresh from storage?

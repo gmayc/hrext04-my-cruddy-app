@@ -13,12 +13,24 @@
   </head>
   <body>
 
-  <input type="text" class="user-input-title" placeholder="Enter the Title">
-  <textarea class="user-input-body" placeholder="Enter the body of text"></textarea>
+    <div class='songmetadata'>
+      <textarea class="song-title" placeholder="Song Title"></textarea>
+      <textarea class="artist" placeholder="Artist"></textarea>
+      <textarea class="album" placeholder="Album"></textarea>
+    </div>
+    <div class='songdata'>
+      <textarea class="B-P-M" placeholder="Enter BPM"></textarea>
+      <!-- <textarea class="TimeSign" placeholder="Enter the body of text"></textarea> make this a list with time signatures -->
+      <textarea class="number-of-bars" placeholder="Enter number of bars"></textarea>
+      <textarea class="instruments" placeholder="Enter instruments separated by a space"></textarea>
+    </div>
+    
+    <button class="add-data-btn">add song</button>
+    <button class="del-data-btn">delete song</button>
+    
+    <select class="stored-songs"></select>
+    <table id= 't1' style="width:100%"></table>
 
-  <button class="add-text-btn">add text</button>
-  <button class="del-text-btn">delete text</button>
 
-  <div class="display"></div>
   </body>
 </html>

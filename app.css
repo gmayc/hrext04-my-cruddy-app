@@ -1,0 +1,21 @@
+body {
+	font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+
+	background-image: url(https://images.pexels.com/photos/325193/pexels-photo-325193.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+	background-size: cover;
+}
+
+#t1 {
+	background-color: white;
+}
+
+
+/* #t1 tr:nth-child(odd) {
+	background-color: rgb(149, 41, 221);
+} */
+#t1 th {
+	color: white;
+	background-color: black;
+}
