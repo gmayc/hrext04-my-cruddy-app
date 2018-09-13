@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <title>My First CRUD App</title>
     <link rel="stylesheet" href="app.css">
-    <script
+  <script 
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <script src="helperFuncs.js"></script>
 
   </head>
   <body>
@@ -27,9 +28,13 @@
     
     <button class="add-data-btn">add song</button>
     <button class="del-data-btn">delete song</button>
+
+ 
+    <input class='song-selector' list="songs-list" placeholder="select song">
+
+      <datalist id="songs-list"></datalist>
     
-    <select class="stored-songs"></select>
-    <table id= 't1' style="width:100%"></table>
+    <table id='t1'></table>
 
 
   </body>
