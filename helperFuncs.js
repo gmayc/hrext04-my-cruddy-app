@@ -1,17 +1,20 @@
+// var _= require('underscore');
+
 let tableGenerator = function(num, array) {
   $('#t1').empty();
+  $('.song-selector').val('');
   
   if (num === 0) {
     alert('You need bars once in a while to nurture the soul, so do songs... Please enter the NUMBER of bars.')
   } else {
-    for (let i = -1; i <= num; i++) {
-      if (i === -1) {
+    for (let i = 0; i <= num; i++) {
+      if (i === 0) {
         $('#t1').append(`<th class="bar1">Instruments</th>`); 
       } else {
         $('#t1').append(`<th class="bar">${i}</th>`); 
       }
     }
-    
+
   // track generator
     if (array[0] === "") {
       alert('John Cage\'s 4:33 is not accepted. Please input your instruments...');
